@@ -18,7 +18,6 @@ my_hash = Hash[coins.zip(prices.map{|i| i.include?(',') ? i.split(',') :i})]
     puts "La crypto la plus grosse:"
     
     prix = prices.map{|i| i.delete("$").to_f}
-    prix.to_s
     a = prix.max
     prix.to_a
     i = 0
@@ -31,13 +30,12 @@ my_hash = Hash[coins.zip(prices.map{|i| i.include?(',') ? i.split(',') :i})]
 # La ou les crypto qui ont la plus petite valeur.
     puts "___"
     puts "la crypto la plus petite"
-    prix = prices.map{|i| i.delete("$").to_f}
-    prix.to_s
+    prix = prices.map{|i| i.delete("$").to_f} 
     a = prix.min
     prix.to_a
     i = 0
     while prix[i] != a
-        i += 1
+        i = i + 1
     end
     puts coins[i]
     puts "___"
@@ -50,6 +48,8 @@ my_hash = Hash[coins.zip(prices.map{|i| i.include?(',') ? i.split(',') :i})]
 
 # Les devises, dont le cours est inférieur à 6000 (Indice : on peut comparer en valeur 2 integers mais pas 2 strings. Pense bien à enlever le $ et éventuellement utiliser .to_i pour faire cet exercice).
     puts "___"
+    puts "les devises inférieur à 6k"
+    
 
     puts "___"
 
